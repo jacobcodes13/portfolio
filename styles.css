@@ -8,4 +8,27 @@
 .navbar {
   display: flex;
   flex-direction: row;
+  
+  justify-content: space-between;
+
+  padding: 1rem;
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+
+  list-style-type: none;
+
+  font-weight: bold;
+}
+
+.navbar-links > li:hover {
+  background-color: black;
+}
+
+.navbar-links > li > a:link {
+  padding: 1rem;
+
+  text-decoration: none;
 }
