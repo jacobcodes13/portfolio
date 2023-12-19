@@ -1,7 +1,5 @@
-html {
-  background: black;
-  height: 100%;
-  overflow: hidden;
+:root {
+  --font-stack: "SF Mono", Arial, Futura, Helvetica;
 }
 
 * {
@@ -11,91 +9,90 @@ html {
   box-sizing: border-box;
 }
 
-#main {
-  position: absolute;
-  top: 200px;
-  left: 200px;
+html, body {
+  font-family: var(--font-stack);
+  font-size: 14px;
 }
 
-  /* Navbar */
+body {
+  color: #fff;
+  height: 100vh;
+  background: #111;
+  overflow: hidden;
+}
 
-/* .navbar {
-  display: flex;
-  flex-direction: row;
-  
-  justify-content: space-between;
+#background-animation {
+  z-index: -1;
+  color: #333;
+  pointer-events: none;
+  user-select: none;
+  position: absolute
+}
+
+.letter {
+  position: absolute;
+  top: 0;
+  width: 16px;
+  aspect-ratio: 1/1;
+  background: #0f0;
+  box-shadow: 0 0 10px #0f0,
+  0 0 20px #0f0,
+  0 0 30px #0f0,
+  0 0 50px #0f0;
+  animation: animate 5s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(100);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.letter::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 25%;
+  width: 50%;
+  height: -100vh;
+  opacity: 0.5s;
+  background: linear-gradient(#0f0, transparent);
+}
+
+main {
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-
-  padding: 0.65rem;
-
-  background: rgba(0, 153, 255, 0.349);
-  border-bottom: 2px solid rgba(0, 153, 255, 0.432);
+  padding: 8px;
+  display: flex
 }
 
-.navbar-links {
-  display: flex;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-
-  list-style-type: none;
-
-  font-size: 20px;
-  font-weight: bold;
+p {
+  max-width: 400px;
+  padding-bottom: 16px
 }
 
-.link {
-  padding: 0.8rem;
-
-  transition-duration: 350ms;
-  transition-timing-function: ease-out;
+h2 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 700
 }
 
-.link:hover {
-  border: 1px solid black;
-
-  padding: 1rem;
+a {
+  color: #20c0ff;
+  font-size: 12px
 }
 
-a:link {
-  text-decoration: none;
+.content {
+  padding: 8px
 }
-
-a:visited {
-  color: black;
-}
-
-  /* Main */
-
-.main {
-
-}
-
-.header {
-  position: absolute;
-  top: 200px;
-  left: 250px;
-  right: 250px;
-
-  border-radius: 3px;
-  padding: 1em;
-
-  background: rgba(0, 153, 255, 0.349);
-
-  box-shadow: 0px 10px 20px -5px;
-}
-
-.cover-background {
-  width: 250px;
-  padding: 3rem;
-}
-
-.cover-background-image {
-  width: 30%;
-  
-  border-radius: 300px;
-
-  position: absolute;
-  top: 320px;
-  left: 850px;
-} */
